@@ -1,0 +1,59 @@
+/*
+body, html, .container {
+	height: 100%;
+}
+
+.float-top {
+	float:up;
+	height: 30%;
+	width: 100%;
+	color:red;
+}
+
+.float-bottom {
+	height: 70%;
+	width: 100%;
+	color:green;
+}
+
+.float-left, .float.right {
+    float:left;
+    width: 20%;
+	height: 100%;
+	color:yellow;
+}
+
+.float.right {
+    width: 80%;
+	height: 100%;
+	color:blue;
+}
+
+div .field-container {
+	border-size: 1px;
+	border-style: solid;
+	border-color: black;
+}
+*/
+
+// table settings:
+
+table {
+  display: block;
+  height: 20px;
+  overflow-y: scroll;
+}
+
+table, th, td {
+	border: 1px solid grey;
+	border-collapse: collapse;
+	padding: 5px;
+}
+
+table tr:nth-child(odd) {
+	background-color: #f2f2f2;
+}
+
+table tr:nth-child(even) {
+	background-color: #ffffff;
+}
