@@ -25,7 +25,7 @@ public class BookLogController {
 	@Autowired
 	private FileLoader loader;
 
-	@RequestMapping("/entries/")
+	@RequestMapping(value = "/entries", method = RequestMethod.GET)
 	public List<BookLogListItem> findAll() {
 		List<BookLogListItem> items = new ArrayList<BookLogListItem>();
 		List<BookLogEntry> findAll = repository.findAll();
@@ -35,7 +35,7 @@ public class BookLogController {
 		return items;
 	}
 
-	@RequestMapping("/entries/{id}")
+	@RequestMapping(value = "/entries/{id}", method = RequestMethod.GET)
 	public BookLogEntry get(@PathVariable("id") String id) {
 		return repository.findOne(id);
 	}
@@ -69,14 +69,16 @@ public class BookLogController {
 		return "Pong v1";
 	}
 
-	@RequestMapping("/entries/load")
+	@RequestMapping(value = "/entries/load", method = RequestMethod.POST)
 	public String load() {
+		System.out.println("Load");
 		loader.load();
 		return "Loaded sampledata";
 	}
 
-	@RequestMapping("/entries/clear")
+	@RequestMapping(value = "/entries", method = RequestMethod.DELETE)
 	public String clear() {
+		System.out.println("Clear");
 		repository.deleteAll();
 		return "Cleared repository";
 	}

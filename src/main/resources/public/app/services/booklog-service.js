@@ -86,3 +86,27 @@ function removeEntry($scope, $http) {
 		}
 	);
 }
+
+function clearAll($scope, $http) {
+	$http.delete("http://localhost:8080/booklog/api/v1/entries").
+		success( function() {
+			
+		}).
+		error( function(data, status, headers, config) {
+			$scope.errorMessage = status + " %=% " + headers + " %=% " + data;
+		}
+	);
+}
+
+function load($scope, $http) {
+	$http.post("http://localhost:8080/booklog/api/v1/entries/load").
+	success( function() {
+		
+	}).
+	error( function(data, status, headers, config) {
+		$scope.errorMessage = status + " %=% " + headers + " %=% " + data;
+	}
+);
+}
+
+

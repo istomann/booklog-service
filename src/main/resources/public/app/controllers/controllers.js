@@ -33,6 +33,16 @@ controllers.BookLogController = function ($scope, $http) {
 		removeEntry($scope, $http);
 	}
 	
+	$scope.clearAll=function() {
+		clearAll($scope, $http);
+		findAll($scope, $http);
+	}
+	
+	$scope.load=function() {
+		load($scope, $http);
+		findAll($scope, $http);
+	}
+	
 	//
 	
 	$scope.addAuthor=function() {
@@ -51,6 +61,10 @@ controllers.BookLogController = function ($scope, $http) {
 	
 	$scope.removeTranslator=function(index) {
 		$scope.selectedEntry.book.translators.splice(index,1);
+	}
+	
+	$scope.unselect=function() {
+		$scope.selectedEntry = null;
 	}
 	
 	
