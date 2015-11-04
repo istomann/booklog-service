@@ -2,7 +2,6 @@
 	<div>
 	
 	Name: <input type="text" data-ng-model="titleFilter" /> {{ titleFilter }}
-	
 
 	<h1>Entries</h1>
 	<div style="width:1000px; height: 600px; overflow: auto;">
@@ -22,16 +21,25 @@
 	</table>
 	</div>
 	
+	<p>
 	{{ $scope.errorMessage }}
+	</p>
 	
 	<div>
+	<table class="buttonPanel">
+	<tr>
+	<td>
 	<form data-ng-submit="createEntry()">
 		<input type="submit" id="create_button" value="Create" /> 
 	</form>
-
+	</td>
+	<td>
 	<form data-ng-submit="removeEntry()">
 		<input type="submit" id="remove_button" value="Remove" data-ng-disabled="selectedEntry == null" /> 
 	</form>
+	</td>
+	</tr>
+	</table>
 	</div>
 	 
 	<div data-ng-show="selectedEntry!=null">
